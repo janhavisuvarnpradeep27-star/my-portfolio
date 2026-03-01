@@ -85,9 +85,20 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <a
           href="#home"
-          className="font-display text-lg font-semibold tracking-tight text-white hover:text-indigo-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+          className="group inline-flex items-center gap-3 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
         >
-          [Janhavi Jadhav] · Computer Engineer
+          <span className="relative grid h-12 w-12 place-items-center overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-700 shadow-[0_10px_24px_-10px_rgba(99,102,241,0.85)] ring-1 ring-white/20 transition duration-300 group-hover:scale-[1.03] group-hover:shadow-[0_14px_34px_-14px_rgba(139,92,246,0.95)]">
+            <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_28%_22%,rgba(255,255,255,0.28),transparent_52%)]" />
+            <span className="font-display text-xl font-extrabold tracking-tight text-white">JJ</span>
+          </span>
+          <span className="hidden text-left leading-tight text-white sm:block">
+            <span className="block font-display text-base font-semibold tracking-tight group-hover:text-indigo-100">
+              Janhavi Jadhav
+            </span>
+            <span className="block text-xs font-medium uppercase tracking-[0.16em] text-slate-300">
+              Computer Engineer
+            </span>
+          </span>
         </a>
 
         {/* Desktop menu */}
