@@ -1,97 +1,40 @@
-import { useEffect, useRef, useState } from "react";
-
-type Skill = { name: string; level: number };
-
 type Category = {
   title: string;
-  color: string;
-  skills: Skill[];
+  accent: string;
+  pill: string;
+  skills: string[];
 };
 
 const categories: Category[] = [
   {
     title: "Languages",
-    color: "from-indigo-500 to-indigo-600",
-    skills: [
-      { name: "Python", level: 95 },
-      { name: "TypeScript", level: 85 },
-      { name: "JavaScript", level: 88 },
-      { name: "C++", level: 80 },
-      { name: "Java", level: 75 },
-      { name: "SQL", level: 82 },
-    ],
+    accent: "from-indigo-500 to-indigo-600",
+    pill: "bg-indigo-500/10 text-indigo-300 border-indigo-500/20 hover:bg-indigo-500/20",
+    skills: ["Python", "TypeScript", "JavaScript", "C++", "Java", "SQL"],
   },
   {
     title: "AI / ML",
-    color: "from-purple-500 to-purple-600",
-    skills: [
-      { name: "PyTorch", level: 88 },
-      { name: "TensorFlow / Keras", level: 82 },
-      { name: "Scikit-learn", level: 90 },
-    ],
+    accent: "from-purple-500 to-purple-600",
+    pill: "bg-purple-500/10 text-purple-300 border-purple-500/20 hover:bg-purple-500/20",
+    skills: ["PyTorch", "TensorFlow / Keras", "Scikit-learn", "Pandas", "NumPy", "OpenCV"],
   },
   {
     title: "Web & Full-Stack",
-    color: "from-pink-500 to-pink-600",
-    skills: [
-      { name: "React", level: 90 },
-      { name: "Node.js / Express", level: 82 },
-      { name: "Tailwind CSS", level: 88 },
-      { name: "REST & GraphQL APIs", level: 80 },
-      { name: "PostgreSQL / MongoDB", level: 78 },
-    ],
+    accent: "from-pink-500 to-pink-600",
+    pill: "bg-pink-500/10 text-pink-300 border-pink-500/20 hover:bg-pink-500/20",
+    skills: ["React", "Node.js / Express", "Tailwind CSS", "REST & GraphQL APIs", "PostgreSQL / MongoDB", "Next.js"],
   },
   {
     title: "Tools & DevOps",
-    color: "from-teal-500 to-teal-600",
-    skills: [
-      { name: "Git / GitHub", level: 92 },
-      { name: "VS Code", level: 95 },
-      { name: "Jupyter", level: 90 },
-    ],
+    accent: "from-teal-500 to-teal-600",
+    pill: "bg-teal-500/10 text-teal-300 border-teal-500/20 hover:bg-teal-500/20",
+    skills: ["Git / GitHub", "VS Code", "Jupyter", "Linux"],
   },
 ];
 
-function SkillBar({ name, level, color, animated }: Skill & { color: string; animated: boolean }) {
-  return (
-    <div>
-      <div className="mb-1.5 flex justify-between text-sm">
-        <span className="font-medium text-slate-200">{name}</span>
-        <span className="text-slate-500">{level}%</span>
-      </div>
-      <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/10">
-        <div
-          className={`h-1.5 rounded-full bg-gradient-to-r ${color} transition-all duration-1000 ease-out`}
-          style={{ width: animated ? `${level}%` : "0%", transitionDelay: "200ms" }}
-        />
-      </div>
-    </div>
-  );
-}
-
 export function Skills() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [animated, setAnimated] = useState(false);
-
-  useEffect(() => {
-    const el = sectionRef.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setAnimated(true);
-          io.disconnect();
-        }
-      },
-      { threshold: 0.15 }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
       id="skills"
       className="relative bg-slate-950 py-24 px-4 overflow-hidden"
     >
@@ -116,17 +59,18 @@ export function Skills() {
               key={cat.title}
               className="rounded-2xl border border-white/5 bg-white/5 p-6 backdrop-blur"
             >
-              <div className="mb-6 flex items-center gap-3">
-                <div
-                  className={`h-1 w-8 rounded-full bg-gradient-to-r ${cat.color}`}
-                />
-                <h3 className="text-base font-semibold text-white">
-                  {cat.title}
-                </h3>
+              <div className="mb-5 flex items-center gap-3">
+                <div className={`h-1 w-8 rounded-full bg-gradient-to-r ${cat.accent}`} />
+                <h3 className="text-base font-semibold text-white">{cat.title}</h3>
               </div>
-              <div className="space-y-4">
+              <div className="flex flex-wrap gap-2">
                 {cat.skills.map((skill) => (
-                  <SkillBar key={skill.name} {...skill} color={cat.color} animated={animated} />
+                  <span
+                    key={skill}
+                    className={`rounded-full border px-3 py-1 text-sm font-medium transition-colors ${cat.pill}`}
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>

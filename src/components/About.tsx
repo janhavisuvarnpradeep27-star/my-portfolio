@@ -83,9 +83,9 @@ export function About() {
                 <div className="absolute inset-[2px] rounded-[1.2rem] bg-[radial-gradient(circle_at_28%_18%,rgba(255,255,255,0.22),transparent_55%)]" />
                 {/* Monogram */}
                 <div className="absolute inset-[2px] flex items-center justify-center rounded-[1.2rem]">
-                  <span className="flex items-end leading-none select-none">
-                    <span className="font-display text-[1.75rem] sm:text-[2rem] font-black tracking-[-0.08em] text-white drop-shadow-[0_2px_8px_rgba(139,92,246,0.7)]">J</span>
-                    <span className="font-display text-[1.75rem] sm:text-[2rem] font-extralight tracking-[-0.08em] text-indigo-200 drop-shadow-[0_2px_8px_rgba(139,92,246,0.5)]">J</span>
+                  <span className="flex items-center gap-[3px] leading-none select-none" style={{ fontVariantLigatures: "none" }}>
+                    <span className="font-display text-[1.75rem] sm:text-[2rem] font-extrabold tracking-normal text-white drop-shadow-[0_2px_8px_rgba(139,92,246,0.7)]" style={{ display: "inline-block" }}>J</span>
+                    <span className="font-display text-[1.75rem] sm:text-[2rem] font-extrabold tracking-normal text-white drop-shadow-[0_2px_8px_rgba(139,92,246,0.7)]" style={{ display: "inline-block" }}>J</span>
                   </span>
                 </div>
                 {/* Subtle bottom-edge shine */}
