@@ -23,7 +23,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-slate-950 px-4"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-slate-950 px-4 pt-20 pb-12 sm:pt-0 sm:pb-0"
     >
       {/* Subtle grid background */}
       <div
@@ -58,7 +58,7 @@ export function Hero() {
 
       <div className="relative z-10 max-w-3xl text-center">
         {/* Badge */}
-        <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-sm font-medium text-indigo-300">
+        <span className="mb-5 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 sm:px-4 sm:py-1.5 text-xs sm:text-sm font-medium text-indigo-300">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-indigo-400 opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-indigo-400" />
@@ -67,7 +67,7 @@ export function Hero() {
         </span>
 
         {/* Name */}
-        <h1 className="font-display text-5xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl">
+        <h1 className="font-display text-4xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl">
           Hi, I&apos;m{" "}
           <span className="animate-shimmer bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             Janhavi Jadhav
@@ -75,20 +75,20 @@ export function Hero() {
         </h1>
 
         {/* Typewriter subtitle */}
-        <p className="mt-5 flex min-h-[2.25rem] items-center justify-center text-xl font-medium text-slate-300 sm:text-2xl">
+        <p className="mt-3 sm:mt-5 flex min-h-[2rem] items-center justify-center text-base font-medium text-slate-300 sm:text-xl lg:text-2xl">
           <span>{role}</span>
           <span className="typewriter-cursor" />
         </p>
 
         {/* Description */}
-        <p className="mt-6 mx-auto max-w-xl text-base text-slate-400 leading-relaxed">
+        <p className="mt-4 sm:mt-6 mx-auto max-w-xl text-sm sm:text-base text-slate-400 leading-relaxed">
           I build intelligent, scalable software — from deep learning models to
           full-stack web applications. Passionate about turning research ideas
           into real-world products.
         </p>
 
         {/* CTAs */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-7 sm:mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
           <a
             href="#research"
             className="rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 transition hover:bg-indigo-500 hover:shadow-indigo-500/40 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
@@ -106,7 +106,7 @@ export function Hero() {
         </div>
 
         {/* Social icons */}
-        <div className="mt-10 flex items-center justify-center gap-5">
+        <div className="mt-7 sm:mt-10 flex items-center justify-center gap-4 sm:gap-5">
           {[
             {
               href: "https://github.com/janhavisuvarnpradeep27-star",
