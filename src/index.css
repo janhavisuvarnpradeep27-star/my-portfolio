@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Syne", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ── Scroll reveal ──────────────────────────────────── */
+.reveal-base {
+  opacity: 0;
+  transition:
+    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-from-up    { transform: translateY(36px); }
+.reveal-from-left  { transform: translateX(-36px); }
+.reveal-from-right { transform: translateX(36px); }
+.reveal-show {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+
+/* ── Hero floating tech badges ──────────────────────── */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0px);   }
+  50%       { transform: translateY(-14px); }
+}
+
+/* ── Typewriter blinking cursor ─────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: #818cf8;
+  margin-left: 3px;
+  border-radius: 2px;
+  vertical-align: text-bottom;
+  animation: blink 0.9s step-end infinite;
+}
+
+/* ── Gradient shimmer on name ───────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+.animate-shimmer {
+  background-size: 300% 300%;
+  animation: shimmer 5s ease infinite;
+}
+
