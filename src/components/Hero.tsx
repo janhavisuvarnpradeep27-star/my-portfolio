@@ -23,14 +23,14 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-slate-950 px-4 pt-20 pb-12 sm:pt-0 sm:pb-0"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-transparent px-4 pt-20 pb-12 sm:pt-0 sm:pb-0"
     >
       {/* Subtle grid background */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
-            "linear-gradient(#a5b4fc 1px, transparent 1px), linear-gradient(to right, #a5b4fc 1px, transparent 1px)",
+            "linear-gradient(#fda2ac 1px, transparent 1px), linear-gradient(to right, #fda2ac 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
@@ -69,7 +69,7 @@ export function Hero() {
         {/* Name */}
         <h1 className="font-display text-4xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl">
           Hi, I&apos;m{" "}
-          <span className="animate-shimmer bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <span className="animate-shimmer bg-gradient-to-r from-[#FDA2AC] via-[#CB0E31] to-[#BAD62C] bg-clip-text text-transparent">
             Janhavi Jadhav
           </span>
         </h1>
